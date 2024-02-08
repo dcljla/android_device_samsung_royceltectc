@@ -37,7 +37,7 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
 #samsung
-BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/royceltectc/bootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/royceltectc/bootimg.mk
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := royceltectc
@@ -58,8 +58,8 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Kernel
 BOARD_KERNEL_CMDLINE := # Exynos doesn't take cmdline arguments from boot image
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
-TARGET_PREBUILT_DT := $(DEVICE_PATH)/prebuilt/dt.img
+TARGET_PREBUILT_KERNEL := device/samsung/royceltectc/prebuilt/Image
+TARGET_PREBUILT_DT := device/samsung/royceltectc/prebuilt/dt.img
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
@@ -88,7 +88,7 @@ TARGET_BOARD_PLATFORM_GPU := mali-t760mp8
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
-TW_SCREEN_BLANK_ON_BOOT := true
+#TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 RECOVERY_SDCARD_ON_DATA := true
