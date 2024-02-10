@@ -36,19 +36,16 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
-#samsung
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/royceltectc/bootimg.mk
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := royceltectc
 
 # Bootloader"
+TARGET_BOOTLOADER_BOARD_NAME := SYSMAGIC001
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := samsungexynos7420
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
-#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 25602336 # This is the maximum known partition size, but it can be higher, so we just omit it
+#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 25755936 # This is the maximum known partition size, but it can be higher, so we just omit it
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -57,9 +54,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Kernel
-BOARD_KERNEL_CMDLINE := # Exynos doesn't take cmdline arguments from boot image
-TARGET_PREBUILT_KERNEL := device/samsung/royceltectc/prebuilt/Image
-TARGET_PREBUILT_DT := device/samsung/royceltectc/prebuilt/dt.img
+BOARD_KERNEL_CMDLINE := 
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz
+TARGET_PREBUILT_DT := $(DEVICE_PATH)/prebuilt/dt.img
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
@@ -68,34 +65,27 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --dt $(TARGET_PREBUILT_DT)
-TARGET_USES_UNCOMPRESSED_KERNEL := true
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-#TARGET_KERNEL_SOURCE := kernel/samsung/royceltectc
-#TARGET_KERNEL_CONFIG := royceltectc_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/royceltectc
+TARGET_KERNEL_CONFIG := royceltectc_defconfig
+
+#samsung
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/royceltectc/bootimg.mk
 
 # Platform
-TARGET_BOARD_PLATFORM := exynos7420
-TARGET_BOARD_PLATFORM_GPU := mali-t760mp8
-
+TARGET_BOARD_PLATFORM := exynos5
 
 # Hack: prevent anti rollback
-#PLATFORM_SECURITY_PATCH := 2099-12-31
-#VENDOR_SECURITY_PATCH := 2099-12-31
-#PLATFORM_VERSION := 16.1.0
+PLATFORM_SECURITY_PATCH := 2099-12-31
+VENDOR_SECURITY_PATCH := 2099-12-31
+PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
-#TW_SCREEN_BLANK_ON_BOOT := true
+TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
-RECOVERY_SDCARD_ON_DATA := true
-BOARD_HAS_NO_REAL_SDCARD := true
-TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
-TW_NO_USB_STORAGE := true
-TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
-TW_NO_EXFAT_FUSE := true
-TW_MTP_DEVICE := "/dev/mtp_usb"
