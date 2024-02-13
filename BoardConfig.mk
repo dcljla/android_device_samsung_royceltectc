@@ -44,7 +44,7 @@ TARGET_OTA_ASSERT_DEVICE := royceltectc
 
 # Bootloader"
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := samsungexynos7420
+TARGET_BOOTLOADER_BOARD_NAME := royceltectc
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
