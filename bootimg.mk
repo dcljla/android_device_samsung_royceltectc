@@ -1,4 +1,4 @@
-MKBOOTIMG := device/samsung/royceltectc/mkbootimg
+# MKBOOTIMG := device/samsung/royceltectc/mkbootimg
 
 FLASH_IMAGE_TARGET ?= $(PRODUCT_OUT)/recovery.tar
 
