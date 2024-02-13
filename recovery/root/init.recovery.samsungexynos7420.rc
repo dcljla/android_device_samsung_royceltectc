@@ -1,0 +1,19 @@
+on init
+	#Blowfish
+	mkdir /data/tee
+	chown root root /data/tee
+
+on late-init
+service tz_service /sbin/tzdaemon_recovery
+    seclabel u:r:tzdaemon:s0
+    socket tz stream 0666 system system
+    user root
+    group root
+    class load_dmv
+
+on property:security.dmv_bf=start
+   class_start load_dmv
+
+on property:security.dmv_bf=stop
+   class_reset load_dmv
+
