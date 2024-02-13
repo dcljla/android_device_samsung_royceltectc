@@ -71,7 +71,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/royceltectc
 TARGET_KERNEL_CONFIG := royceltectc_defconfig
 
 # samsung
-BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/royceltectc/bootimg.mk
+#BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/royceltectc/bootimg.mk
 
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
