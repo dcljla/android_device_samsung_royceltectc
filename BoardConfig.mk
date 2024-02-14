@@ -37,7 +37,7 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
 #samsung
-#BOARD_CUSTOM_BOOTIMG_MK := device/samsung/royceltectc/bootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/royceltectc/bootimg.mk
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := royceltectc
