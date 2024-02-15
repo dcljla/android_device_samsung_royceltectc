@@ -1,7 +1,7 @@
 [
 	{
                 "remote":"github",
-                "repository":"ASKSAP/android_kernel_samsung_royceltectc",
+                "repository":"dcljla/android_kernel_samsung_royceltectc",
                 "target_path":"kernel/samsung/royceltectc",
                 "revision":"main"
 	}
