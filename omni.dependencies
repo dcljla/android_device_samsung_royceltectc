@@ -3,6 +3,6 @@
                 "remote":"github",
                 "repository":"dcljla/android_kernel_samsung_royceltectc",
                 "target_path":"kernel/samsung/royceltectc",
-                "revision":"main"
+                "revision":"Test"
 	}
 ]
